@@ -2,13 +2,11 @@ body {
     background-color: black;
 }
 
-
 .user {
-  display: inline-block;
+  position: absolute;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  position: absolute;
   top: 8px;
   right: 16px;
 
