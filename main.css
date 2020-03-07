@@ -13,3 +13,7 @@ body {
   background-position: center center;
   background-size: cover;
 }
+
+.profile {
+  background-image: url('http://placehold.it/400x200');
+}
