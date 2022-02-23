@@ -1,182 +1,258 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
 <head>
-	<title>The DARTS Game</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="Jorge Morgado <the_darts_game (at) morgado (dot) ch>" />
-	<meta name="keywords" content="web, game, darts, dart, 501, board, target, hand, player, multi-player, browser, http, javascript, dom, html, css" />
-	<meta name="revised" content="(c) March 2010" />
-	<meta name="others" content="Graphics by Paulo Silva" />
-	<link rel="icon" type="image/gif" href="images/favicon.gif">
-	<link rel="apple-touch-icon" href="images/favicon.gif" />
-	<link rel="stylesheet" type="text/css" href="styles/the_darts_game.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body bgcolor="#ffffff" text="#000000" link="#7f0000" alink="#000000" vlink="#400040">
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
 
-<!-- Menu -->
-<div id="menu">
-<table width="100%">
-<tbody>
-<tr>
-	<td class="left" align="left">
-		<a href="#" onclick="oGame.start();">New</a> |
-		<a href="#" onclick="oGame.pause();">Pause</a> |
-		<select name="speed" class="combo" onchange="oGame.speed(this.options[this.selectedIndex].value);">
-			<option value="0" selected>Slow</option>
-			<option value="1">Medium</option>
-			<option value="2">Fast</option>
-		</select>
-	</td>
-	<td class="center" align="center" width="50%">
-		<label id="lblFeed" style="font-family:arial black;">The DARTS 501 Game</label>
-	</td>
-	<td class="right" align="right" width="25%" >
-		<a href="http://thedartsgame.sourceforge.net/">Main</a>
-<!--
-	&nbsp;&nbsp;
-	<select name="lang" class="combo" onClick="return oGame.setLanguage(this.options[this.selectedIndex].value);">
-		<option value="en" selected>English</option>
-		<option value="pt">Portugu&ecirc;s</option>
-	</select>
--->
-	</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!-- Menu //-->
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Nagarjun Ratnesh</h1>
+            <h2>Interested in exploration</h2>
+            <a href="#" class="btn-rounded-white">Download Resume</a>
+        </div>
+        <!-- End #lead-content -->
 
-<!-- Player 1 floating layer (left-aligned) -->
-<div id="Player1" style="top:50px;left:20px">
-<table align="left" border="0" width="150" bgcolor="#424242" cellspacing="0" cellpadding="5">
-<tr>
-<td width="100%">
+        <div id="lead-overlay"></div>
 
-	<table border="0" width="100%" cellspacing="0" cellpadding="0">
-	<tr>
-	<th id="titleBar1" style="cursor:move" width="100%">
-		<ilayer width="100%" onSelectStart="return false">
-		<layer width="100%" onMouseover="isOver=true;if (isN4) ddN4(Player1);" onMouseout="isOver=false;">
-			<font face="arial,helvetica" color="#ffffff"><label id="lblPlayer0"></label></font>
-		</layer>
-		</ilayer>
-	</th>
-	</tr>
-	<tr>
-	<td width="100%" bgcolor="#ffffff" style="padding:4px">
-		<!-- Player 1 board's content -->
-		<table width="100%" border="0" cellspacing="0" cellpadding="3">
-		<tr><td colspan="2" align="center"><a href="#" onclick="oGame.playerChangeName(0);">Change Name</a></td></tr>
-		<tr><td colspan="2"><b><label id="lblTurn0">Darts</label></b></td></tr>
-		<tr id="rowDart00"><td><b>1<sup>st</sup></b></td><td align="right"><label id="lblDart00">-</label></td></tr>
-		<tr id="rowDart01"><td><b>2<sup>nd</sup></b></td><td align="right"><label id="lblDart01">-</label></td></tr>
-		<tr id="rowDart02"><td><b>3<sup>rd</sup></b></td><td align="right"><label id="lblDart02">-</label></td></tr>
-		<tr><td colspan="2"><br /></td></tr>
-		<tr><td><b>Score</b></td><td align="right"><label id="lblScore0">0</label></td></tr>
-		</table>
-		<!-- Player 1 board's content //-->
-	</td>
-	</tr>
-	<tr>
-		<td bgcolor="#ffffff" align="center" style="padding:8px">
-<script type="text/javascript"><!--
-google_ad_client = "pub-9250371945135590";
-/* the_darts_game_120x240_20100412 */
-google_ad_slot = "6908753562";
-google_ad_width = 120;
-google_ad_height = 240;
-//-->
-</script>
-<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-		</td>
-	</tr>
-	</table>
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
 
-</td>
-</tr>
-</table>
-</div>
-<!-- Player 1 floating layer //-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About Me</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat. Donec
+                        eu vehicula neque. Donec viverra lorem nunc, tempus euismod eros sollicitudin ut. Quisque et tincidunt libero. Donec id pharetra justo. Proin euismod lacinia dolor, eu scelerisque justo tempus pharetra. Vivamus nunc justo, finibus
+                        ut nisl sed, euismod rhoncus nulla. Proin sed magna egestas, egestas ante et, congue eros. In consequat, mauris dapibus tincidunt suscipit, ex libero aliquet diam, at maximus risus enim non leo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
 
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+            <div data-date="September 2015 – September 2017">
+                <h3>Employer Name</h3>
+                <h4>Job Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                </p>
+            </div>
 
-<!-- Player 2 floating layer (right-aligned) -->
-<div id="Player2" style="top:50px;right:20px">
-<table align="right" border="0" width="150" bgcolor="#424242" cellspacing="0" cellpadding="5">
-<tr>
-<td width="100%">
+            <div data-date="September 2015 – September 2018">
+                <h3>Employer Name</h3>
+                <h4>Job Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                </p>
+            </div>
 
-	<table border="0" width="100%" cellspacing="0" cellpadding="0" height="36">
-	<tr>
-	<th id="titleBar2" style="cursor:move" width="100%">
-		<ilayer width="100%" onSelectStart="return false">
-		<layer width="100%" onMouseover="isOver=true;if (isN4) ddN4(Player2);" onMouseout="isOver=false;">
-			<font face="arial,helvetica" color="#ffffff"><label id="lblPlayer1"></label></font>
-		</layer>
-		</ilayer>
-	</th>
-	</tr>
-	<tr>
-	<td width="100%" bgcolor="#ffffff" style="padding:4px">
-		<!-- Player 2 board's content -->
-		<table width="100%" border="0" cellspacing="0" cellpadding="3">
-		<tr><td colspan="2" align="center"><a href="#" onclick="oGame.playerChangeName(1);">Change Name</a></td></tr>
-		<tr><td colspan="2"><b><label id="lblTurn1">Darts</label></b></td></tr>
-		<tr id="rowDart10"><td><b>1<sup>st</sup></b></td><td align="right"><label id="lblDart10">-</label></td></tr>
-		<tr id="rowDart11"><td><b>2<sup>nd</sup></b></td><td align="right"><label id="lblDart11">-</label></td></tr>
-		<tr id="rowDart12"><td><b>3<sup>rd</sup></b></td><td align="right"><label id="lblDart12">-</label></td></tr>
-		<tr><td colspan="2"><br /></td></tr>
-		<tr><td><b>Score</b></td><td align="right"><label id="lblScore1">0</label></td></tr>
-		</table>
-		<!-- Player 2 board's content //-->
-	</td>
-	</tr>
-	<tr>
-		<td bgcolor="#ffffff" align="center" style="padding:8px">
-<script type="text/javascript"><!--
-google_ad_client = "pub-9250371945135590";
-/* the_darts_game_120x240_20100412 */
-google_ad_slot = "6908753562";
-google_ad_width = 120;
-google_ad_height = 240;
-//-->
-</script>
-<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-		</td>
-	</tr>
-	</table>
+            <div data-date="September 2015 – September 2019">
+                <h3>Employer Name</h3>
+                <h4>Job Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
 
-</td>
-</tr>
-</table>
-</div>
-<!-- Player 2 floating layer //-->
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>University of Ottawa</h3>
+            <span class="education-date">Sept 2016 - Sept 2017</span>
+            <h4>Bachelor of Science in Computer Science</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+            </p>
+        </div>
+        <!-- End .education-block -->
 
-<div id="Footer">
-<a href='http://thedartsgame.sourceforge.net/'>The Darts Game</a>, &copy;2010 Jorge Morgado, &lt;the_darts_game (at) morgado (dot) ch&gt;
-</div>
+        <div class="education-block">
+            <h3>University of Toronto</h3>
+            <span class="education-date">Graduated 2020</span>
+            <h4>Bachelor of Science (Statistics Specialist: Machine Learning and Data Mining Stream</h4>
+            <ul>
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+            </ul>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
 
-<script language="JavaScript1.2" type="text/javascript" src="scripts/library.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/dragdrop.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/layer.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/timer.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/score.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/board.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/dart.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/hand.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/lang.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/game.js"></script>
-<script language="JavaScript1.2" type="text/javascript" src="scripts/the_darts_game.js"></script>
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Project Name Here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                        </p>
+                        <a href="#">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-15846526-2");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Project Name Here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                        </p>
+                        <a href="#">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>React</li>
+            <li>Elixir</li>
+            <li>Java</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/email@email.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="nagarjun.ratnesh@mail.utoronto.ca" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; <span id="current-year">2022</span> YOUR NAME
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
 </body>
+
 </html>
