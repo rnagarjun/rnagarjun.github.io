@@ -102,32 +102,46 @@ to tell the story of data flow from the Source to the destination to various sta
 200 projects based on importance to stakeholder, the level of effort, project time frame and
 risks by analyzing variety of measurements using payoff matrices which facilitated the upper
 management to make sound operational/financial decisions. </li>
-						<li> Developed a Data Management System Monitor to automatically monitor real-time
+						<li> Developed a Data Management System to automatically monitor real-time
 status of every dataset, stations and elements ingested into the DMS (via Power Automate), in addition to also
 monitoring the tools used to access these data. This allowed us to immediately be aware of and take action on any data outages and not relying/waiting on upstream clients to report back and increased our trust in them.
 						</li>
+                        <li>Enhanced insights by connecting PowerBI to various data sources including outlook emails (M365) to obtain operational metrics on the performance of our sections to indentify improvements in current workflow. (This helped upper management reallocate resources on area lacking in support - data quality)</li>
 						<li>
 						Designed an end-to-end dataflow diagram to provide visual outline of the formats and
 direction of flows involved in the transfer for data between systems, network and
 entities/applications for MDSD Monitoring Datasets
 						</li>
-						<li> Created various python script. Few of Many:
-								<li>
-								Generate WBS(Weather Buoy System) product to assist researchers in extracting daily
-buoy data to compensate for the retirement of WBS. </li>
-							<li> Automated <a href="https://agriculture.alberta.ca/acis/weather-data-viewer.jsp"> Alberta Forestry Station Metadata </a> extraction.
- </li>
+						<li>
+                            Created various python script. Few of Many:
+                            <ul>
+							<li>Generate WBS(Weather Buoy System) product to assist researchers in extracting daily buoy data to compensate for the retirement of WBS. </li>
+							<li> Automated <a href="https://agriculture.alberta.ca/acis/weather-data-viewer.jsp"> Alberta Forestry Station Metadata </a> extraction. </li>
 							<li>Automated station contact update into <a href="https://oscardepl.wmo.int/surface/ "> OSCAR/Surface </a> through GUI upload using Selenium.</li>
+                            </ul>
 						</li>
 						
 						<li>
 						Continuous development on Anomaly Detection, currently exploring using weather prediction
-and email notification from provider to identify abnormalities. 
-						</li>
-						<li> Supported Canada’s effort for WIGOS implementation (Gap analysis Canadian status with
+and email notification from provider to identify abnormalities. (Exploring IBM Pairs to access for regression with forecast data)
+						</li> 
+                        <li> WMO Activities
+<ul>
+<li> Supported Canada’s effort for WIGOS implementation (Gap analysis Canadian status with
 regards to <a href='https://public.wmo.int/en/our-mandate/what-we-do/observations/Unified-WMO-Data-Policy-Resolution'> WMO Data Policy </a>, Develop WSI Schema plan) </li>
-					
-                </p>
+<li>Assist OGDs and provinces with the upload of data into Oscar/Surface.</li>
+<li>Supported <a href='https://community.wmo.int/news/operational-newsletter'> GENOT/METNO </a> notification for tdcf bufr dissemination to WMO.</li>
+<li>Supporting WIS 2.0 by generating MCF for metadata discovery to allow ECCC datasets available via google search.</li>
+</ul>
+</li>
+
+<li>Supporting Paper digitization - Data Rescue (Recovery of physical archives) and Qc uploads of images & accommodation for XML in the archive</li>
+<li>Diagnose and Triage issues relating to the mission critical DMS system coming into the generic DMOS inbox including tracing Java code </li>
+<li>Performing Quality Control on issues that are notified through the suspect data inbox about using MIDAS (Internal data correction tool) - Supporting archive and CDO</li> 
+<li>Provided DMS and Archive data request extraction of from clients (ex; AVOS ship data request, Wind Values for instrument flaw analysis) via extracting from Legacy Oracle Database by writing efficient SQL scripts</li>
+<li>Support WMO Normals generations effort for last 3 decades (1991-2020)</li>	
+<li>Facilitate the ingest of new datasets (MSC, collaborative monitoring, etc.) into DMS and metadata(marine, collaborative monitoring, etc.) into the MR.</li>				
+</p>
             </div>
 
             <div data-date="January 2022 – Present">
@@ -145,12 +159,13 @@ regards to <a href='https://public.wmo.int/en/our-mandate/what-we-do/observation
 				</p>
             </div>
 
-            <div data-date="October 2021 – Present">
+            <div data-date="October 2021 – July 2022">
                 <h3>StackEducation</h3>
                 <h4>Teaching Coach - Part Time</h4>
                 <p>
-					Provided guidance to Students(15-20) from University of Vermont for their industry project - Nuclei Segmentation (data science related projects in partnership with external companies) by recommending libraries to use, efficient programming principles, removed roadblocks during office hours and overall guidance on path forward.
-				</p>
+					Provided guidance to Students(15-20) from University of Vermont for their industry project - Nuclei Segmentation (data science related projects in partnership with external companies) by recommending libraries to use, efficient programming principles, remove roadblocks during office hours and overall guidance on path forward.
+                    Educated stduents from Framingham State University on Data Visualization with the use of Tableau (Desktop and Server)
+                </p>
             </div>
 			
 			            <div data-date="September 2015 – September 2019">
@@ -296,7 +311,7 @@ students across the U of T campus. </li>
    End #projects -->
 
     <div id="skills">
-        <h2 class="heading">Skills</h2>
+        <h2 class="heading">Technologies & Frameworks</h2>
         <ul>
             <li>Python</li>
             <li>R</li>
@@ -305,6 +320,9 @@ students across the U of T campus. </li>
             <li>React</li>
             <li>Azure</li>
             <li>PowerBI</li>
+            <li>Tableau</li>
+            <li>Looker (lookML)</li>
+            <li>Jira</li>
         </ul>
     </div>
     <!-- End #skills -->
@@ -313,9 +331,9 @@ students across the U of T campus. </li>
 		<div>
         <h2>Get in Touch</h2>
         <div id="contact-form">
-            <form method="POST" action="mailto:nagarjun.ratnesh@mail.utoronto.ca">
+            <form method="POST" action="mailto:ratneshnagarjun@gmail.com">
                 <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="nagarjun.ratnesh@mail.utoronto.ca" required>
+                <input type="email" name="_replyto" placeholder="ratneshnagarjun@gmail.com" required>
                 <textarea name="message" placeholder="Your message" required></textarea>
                 <button type="submit">Send</button>
             </form>
@@ -342,6 +360,7 @@ students across the U of T campus. </li>
                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                     </span>
                 </div>
+                <!-- 
                 <div class="col-sm-5 social">
                     <ul>
                         <li>
@@ -363,7 +382,7 @@ students across the U of T campus. </li>
                             <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
